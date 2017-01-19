@@ -47,24 +47,20 @@ pages和widgets里的文件夹都是由js、ejs、less组成这个文件的所�
 
 ![此处输入图片的描述][8]
 
-那么只需要在pages/widgetsList/index.js这么写
-
-![此处输入图片的描述][9]
-
 
 - 初始化开发文件夹
 ```npm run init```
-用的是[plugin-package-init][10]这个插件
+用的是[plugin-package-init][9]这个插件
 
-大概的使用只这样：
+大概的使用是这样：
 
 回答下面问题
 
-![此处输入图片的描述][11]
+![此处输入图片的描述][10]
 
 生成对应开发文件夹
 
-![此处输入图片的描述][12]
+![此处输入图片的描述][11]
 
 
 - 监听页面更新
@@ -81,8 +77,7 @@ pages和widgets里的文件夹都是由js、ejs、less组成这个文件的所�
   [5]: http://mmbiz.qpic.cn/mmemoticon/PiajxSqBRaELiaDJicUzQeygtrFkmXRfu9OpzRB1wdhcp96ibXoZ6QMSDmk82DQHpbUG/0
   [6]: http://mmbiz.qpic.cn/mmemoticon/dx4Y70y9XcuDHh8CZHXrgFCiacMibDXmJSmzib9LmsE5iaqlib5jkfEFkicqBO7rsbdBlF/0
   [7]: https://www.npmjs.com/package/widgets-loader
-  [8]: http://mmbiz.qpic.cn/mmemoticon/Q3auHgzwzM6FlTK5C4kT0xYsk8EAezx5rzC3NiaK6qWz0jcuEPKPlCK00B4unHUz62iaayeibpEY0U/0
-  [9]: http://mmbiz.qpic.cn/mmemoticon/m0RUwghI3Lyoica0WuhxEvYhSZ6sxBcfDEN4ceib6T3PpN9ZTXoCJDhgjF0VXdqvxu/0
-  [10]: https://www.npmjs.com/package/plugin-package-init
-  [11]: http://mmbiz.qpic.cn/mmemoticon/ajNVdqHZLLCF5N2esKGDeBR8upYQ7NtE2ialY6S2FN4GeumTU48as9TK6YbicG2iczsqZFQxK9Xibno/0
-  [12]: http://mmbiz.qpic.cn/mmemoticon/Q3auHgzwzM5ib8KIjTiaRAy0XHBk6B7KV9IibwQLFQ39P0G8ltLsTZ49vu3KesamzKnC6uOy3Pqn8M5BaYq3r1KNA/0
+  [8]: http://mmbiz.qpic.cn/mmemoticon/Q3auHgzwzM6FlTK5C4kT0wNxMicekluWicxd5Vq83A7jRic1SV4oSqibJmDoGHdXwLJ9YdFsGdwSicd8/0
+  [9]: https://www.npmjs.com/package/plugin-package-init
+  [10]: http://mmbiz.qpic.cn/mmemoticon/ajNVdqHZLLCF5N2esKGDeBR8upYQ7NtE2ialY6S2FN4GeumTU48as9TK6YbicG2iczsqZFQxK9Xibno/0
+  [11]: http://mmbiz.qpic.cn/mmemoticon/Q3auHgzwzM5ib8KIjTiaRAy0XHBk6B7KV9IibwQLFQ39P0G8ltLsTZ49vu3KesamzKnC6uOy3Pqn8M5BaYq3r1KNA/0
