@@ -1,0 +1,70 @@
+@import "g_fn";
+
+
+//==================================================
+
+// Mobile的LESS函数库
+// 注意！！！！
+// 要求本文件不能产生任何CSS代码，只是提供函数库给其他LESS文件调用。
+
+//==================================================
+.lg(@startColor, @endColor, @start:0, @stop:100%) when (isnumber(@start)){//判断第3个参数是否为数字
+    background-color:mix(@startColor, @endColor, 40%);
+    background-image:-webkit-gradient(linear, 0 @start, 0 @stop, from(@startColor), to(@endColor));
+    background-image:-webkit-linear-gradient(top, @startColor @start, @endColor @stop);
+    background-image:linear-gradient(to bottom, @startColor @start, @endColor @stop);
+}
+.lg(@bgColor, @startColor, @endColor, @start:0, @stop:100%) when (iscolor(@endColor)){//判断第3个参数是否为颜色
+    background-color:@bgColor;
+    background-image:-webkit-gradient(linear, 0 @start, 0 @stop, from(@startColor), to(@endColor));
+    background-image:-webkit-linear-gradient(top, @startColor @start, @endColor @stop);
+    background-image:linear-gradient(to bottom, @startColor @start, @endColor @stop);
+}
+.lg_3(@startColor, @midColor, @endColor, @start:0, @mid: 60%, @stop:100%) when (isnumber(@mid)){
+    background-color:mix(@startColor, @endColor, 40%);
+    background-image:-webkit-gradient(linear, 0 @start, 0 @stop, from(@startColor), color-stop(@mid, @midColor), to(@endColor));
+    background-image:-webkit-linear-gradient(top, @startColor @start, @midColor @mid, @endColor @stop);
+    background-image:linear-gradient(to bottom, @startColor @start, @midColor @mid, @endColor @stop);
+}
+.lg_3(@bgColor, @startColor, @midColor, @endColor, @start:0, @mid: 60%, @stop:100%) when (iscolor(@endColor)){
+    background-color:@bgColor;
+    background-image:-webkit-gradient(linear, 0 @start, 0 @stop, from(@startColor), color-stop(@mid, @midColor), to(@endColor));
+    background-image:-webkit-linear-gradient(top, @startColor @start, @midColor @mid, @endColor @stop);
+    background-image:linear-gradient(to bottom, @startColor @start, @midColor @mid, @endColor @stop);
+}
+
+.setBgSize(@w,@h){.background_size(@w, @h);}
+.setBgSizeWidth(@w){.background_size(@w);}
+.setBgSizeHeight(@h){.background_size(@h);}
+._setRetinaComm(@url,@w,@h){
+  background-image:url(~"@{imgPathComm}@{url}");
+  .setBgSize(@w,@h);
+}
+.setRetina(@url,@w,@h){
+  background-image:url(~"@{url}");
+  .setBgSize(@w,@h);
+}
+
+.setButton(){
+  .db;.ml(auto);.mr(auto);.pl(14px);.pr(14px);.f(@btnFontSize);.tc;.tdn;.ov;.h(@btnHeight);.br(@btnBorderRadius);.box_sizing(border-box);.lh(@btnHeight);
+  -webkit-tap-highlight-color:rgba(255,255,255,0);
+}
+
+.setBtnDefault(){.setButton();.c(@btnFontColor);.bc(@btnDefaultBg);
+  &:active{ .c(@btnActiveFontColor);.bc(@btnDefaultActiveBg); }
+}
+.setBtnPrimary(){.setButton();.c(@btnFontColor);.bc(@btnPrimaryBg);
+  &:active{ .c(@btnActiveFontColor);.bc(@btnPrimaryActiveBg); }
+}
+.setBtnWarn(){.setButton();.c(@btnFontColor);.bc(@btnWarnBg);
+  &:active{ .c(@btnActiveFontColor);.bc(@btnWarnActiveBg); }
+}
+
+.contentBox(){
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+}
+.borderBox(){
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}

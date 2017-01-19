@@ -1,0 +1,257 @@
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5em;
+}
+input,
+textarea,
+button,
+a {
+  outline: 0;
+}
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+dl,
+dd,
+fieldset,
+textarea {
+  margin: 0;
+}
+fieldset,
+legend,
+textarea,
+input {
+  padding: 0;
+}
+ul,
+ol {
+  padding-left: 0;
+  list-style-type: none;
+}
+a img,
+fieldset {
+  border: 0;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+audio,
+canvas,
+video {
+  display: inline-block;
+}
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+[hidden] {
+  display: none;
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+figure {
+  margin: 0;
+}
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  margin: 0;
+}
+button,
+select {
+  text-transform: none;
+}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer;
+  -webkit-appearance: button;
+}
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+input[type="search"] {
+  box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  -webkit-appearance: textfield;
+  -webkit-box-sizing: content-box;
+}
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+textarea {
+  overflow: auto;
+  vertical-align: top;
+  resize: none;
+}
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  box-shadow: inset 0 0 0 1000px #FFFFFF;
+  -moz-box-shadow: inset 0 0 0 1000px #FFFFFF;
+  -webkit-box-shadow: inset 0 0 0 1000px #FFFFFF;
+}
+select {
+  border-radius: 0;
+  -webkit-border-radius: 0;
+}
+.setting {
+  color: gray;
+}
+.title_Widget {
+  padding: 10px 0 10px 25px;
+  position: relative;
+}
+.title_Widget:before {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  margin-top: -13px;
+  content: ' ';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 8px;
+}
+.title_Widget.open:before {
+  border-color: transparent transparent #000 transparent;
+}
+.title_Widget.close:before {
+  margin-top: -4px;
+  border-color: #000 transparent transparent transparent;
+}
+.title_Widget:hover {
+  cursor: pointer;
+}
+.group:after {
+  content: ".";
+  display: block;
+  height: 0;
+  font-size: 0;
+  clear: both;
+  visibility: hidden;
+}
+a {
+  color: #4575b8;
+  text-decoration: none;
+}
+/*
+nav
+左侧
+*/
+.nav {
+  position: static;
+  top: 0;
+  left: 0;
+  width: 200px;
+  border-right: 1px solid #E5E5E5;
+}
+.nav_ele {
+  height: 38px;
+  line-height: 38px;
+  border-bottom: 1px solid #E5E5E5;
+}
+.nav_ele a {
+  display: block;
+  line-height: inherit;
+  color: #333;
+  padding-left: 30px;
+  text-decoration: none;
+}
+.nav_ele.nav_title .nav_link {
+  padding-left: 15px;
+}
+.nav_ele.selected {
+  background-color: #46D321;
+}
+.nav_ele.selected a {
+  color: #fff;
+}
+.nav_ele.disabled a {
+  color: #E5E5E5;
+}
+/*page_nav_list*/
+.page_nav_list {
+  border-bottom: 1px solid #E5E5E5;
+}
+.page_nav_list .page_nav_ele {
+  float: left;
+}
+.page_nav_list .page_nav_ele .page_nav_link {
+  display: block;
+  padding: 0 10px;
+  height: 38px;
+  line-height: 38px;
+}
+.page_nav_list .page_nav_ele.selected {
+  border-bottom: 2px solid #46D321;
+}
+.inner_top_opr {
+  margin-bottom: 10px;
+}
+.head {
+  height: 60px;
+  line-height: 60px;
+  background-color: #3f4348;
+  color: #999999;
+  text-align: center;
+}
+.head .inner {
+  padding: 0 20px;
+  text-align: left;
+  font-size: 20px;
+}
+.head a {
+  color: #fff;
+}
+.head .logo_ic {
+  position: relative;
+  top: -2px;
+  display: inline-block;
+  width: 60px;
+  height: 100%;
+  background: url(../../../../../htdocs/zh_CN/base/images/ic_logo_white.png) no-repeat center;
+  vertical-align: top;
+}
+
+/*# sourceMappingURL=index.2737.css.map*/

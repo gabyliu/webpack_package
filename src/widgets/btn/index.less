@@ -1,0 +1,52 @@
+@import "../../base/style/fn";
+
+.btn {
+    min-width: 60px;
+    display: inline-block;
+    padding: 0 22px;
+    height: 30px;
+    line-height: 30px;
+    overflow: visible;
+    vertical-align: middle;
+    text-align: center;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    text-decoration: none;
+    font-size: 13px;
+    border-width: 1px;
+    border-style: solid;
+    cursor: pointer;
+    &.btn_default {
+        background-color: #ffffff;
+        color: #333333;
+        border-color: #dadbe0;
+    }
+    &.btn_primary {
+        background-color: #46d321;
+        color: #ffffff;
+        border-color: #46D321;
+    }
+    &.btn_warn{
+        .bc(#f24d4d);
+        .c(#fff);
+        border-color: #d43d3d;
+        &:hover{
+            .bc(#d43d3d);
+            .c(#fff);
+        }
+    }
+    &.btn_disabled{
+        .bc(#e7e7eb);
+        .c(#a5a6aa);
+        border-color: #dadbe0;
+        cursor: default;
+        &:hover{
+            background: none;
+            .bc(#e7e7eb);
+            .c(#a5a6aa);
+            border-color: #dadbe0;
+        }
+    }
+}
+

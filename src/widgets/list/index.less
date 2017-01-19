@@ -1,0 +1,64 @@
+@import "../../base/style/fn";
+
+
+.msg_list_ele_container{
+	.msg_list_title{
+		.dib;
+		.w(6em);
+		.mr(1em);
+		.vt;
+		.tr;
+	}
+	.msg_list_content{
+		.dib;
+		.vt;
+	}
+
+}
+//table
+.table_wrp{
+	&.with_border{
+		.table{
+			border: 1px solid @defaultLineColor;
+		}
+	}
+}
+.table{
+	width: 100%;
+	font-size: 14px;
+	background-color: #ffffff;
+	text-align: center;
+	border-top: 1px solid @defaultLineColor;
+	border-bottom: 1px solid @defaultLineColor;
+	border-spacing: 0;
+}
+.table_cell{
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 9px;
+  	padding-bottom: 9px;
+	font-weight: 400;
+	font-style: normal;
+	.tl;
+	word-break: break-all;
+	word-wrap: break-word;
+}
+.thead{
+	.bc(@themeHighlightColor);
+	.table_cell{
+		&:first-child{
+			border-left: none;
+		}
+	}
+}
+.tbody{
+	.table_cell {
+		border-top: 1px solid #e7e7eb;
+		&.empty{
+			.p(40px);
+			.tc;
+			.c(@descColor);
+		}
+	}
+
+}

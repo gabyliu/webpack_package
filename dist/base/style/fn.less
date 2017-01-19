@@ -1,0 +1,97 @@
+@import "g_fn";
+@import "reset";
+
+//==================================================
+// PC的LESS函数库
+// 注意！！！！
+// 要求本文件不能产生任何CSS代码，只是提供函数库给其他LESS文件调用。
+
+//==================================================
+
+.setBtnDefault(){
+    .lg(@btnDefaultFirstStop,@btnDefaultEndStop);border-color:@btnDefaultBorder;.c(@btnDefaultColor);
+    button{.c(@btnDefaultColor);}
+    &:hover{
+        .lg(@btnDefaultHoverFirstStop, @btnDefaultHoverEndStop);border-color:@btnDefaultHoverBorder;.bs(@btnDefaultHoverShadow);.c(#000000);
+        button{.c(@btnDefaultHoverColor);}
+    }
+}
+.setBtnPrimary(){
+    .lg(@btnPrimaryFirstStop,@btnPrimaryEndStop);border-color:@btnPrimaryBorder;.c(@btnPrimaryColor);
+    button{.c(#FFFFFF);}
+    &:hover{
+        .lg(@btnPrimaryHoverFirstStop,@btnPrimaryHoverEndStop );border-color:@btnPrimaryHoverBorder;.bs(@btnPrimaryHoverShadow);.c(@btnPrimaryHoverColor);
+        button{.c(@btnPrimaryHoverColor);}
+    }
+}
+.setBtnWarn(){
+    .lg(@btnWarnFirstStop,@btnWarnEndStop);border-color:@btnWarnBorder;.c(@btnWarnColor);
+    button{.c(#FFFFFF);}
+    &:hover{
+        .lg(@btnWarnHoverFirstStop,@btnWarnHoverEndStop );border-color:@btnWarnHoverBorder;.bs(@btnWarnHoverShadow);.c(@btnWarnHoverColor);
+        button{.c(@btnWarnHoverColor);}
+    }
+}
+.setBtnDisabled(){
+    .lg(@btnDisabeldFirstStop,@btnDisabeldEndStop);border-color:@btnDisabledBorder;.c(@btnDisabledColor);cursor:default;
+    button{.c(@btnDisabledColor);cursor:default;}
+    &:hover{
+        .lg(@btnDisabeldHoverFirstStop,@btnDisabeldHoverEndStop);.bs(none);border-color:@btnDisabledHoverBorder;.c(@btnDisabledColor);
+        button{.c(@btnDisabledHoverColor);cursor:default;}
+    }
+}
+
+.setToolbar(@mt:0,@pl:@frmLabelWidth + 1em,@borderWidth:1px,@align:left){
+    .bs(none);
+    .m(@mt 0 0);.pl(@pl);border-top-width:@borderWidth;
+    .btn{.ml(0);}
+}
+
+.setting{
+    color: gray;
+}
+.title_Widget{
+    .p(10px 0 10px 25px);
+    .rel;
+    &:before{
+        .abs;
+        top: 50%;
+        left: 5px;
+        .mt(-13px);
+        content: ' ';
+        .db;
+        .w(0);
+        .h(0);
+        border-style: solid;
+        border-width: 8px;
+
+    }
+    &.open{
+        &:before{
+            border-color: transparent transparent #000 transparent;
+        }
+    }
+    &.close{
+        &:before{
+            margin-top: -4px;
+            border-color: #000 transparent transparent transparent;
+        }
+    }
+    &:hover{
+        cursor: pointer;
+    }
+}
+.group{
+    &:after{
+        content: "."; 
+        display: block; 
+        height: 0; 
+        font-size: 0; 
+        clear: both; 
+        visibility: hidden;
+    }
+}
+a {
+    color: #4575b8;
+    text-decoration: none;
+    }

@@ -1,0 +1,628 @@
+//==================================================
+// PC与Mobile的公共LESS函数库
+// 注意！！！！
+// 此文件相当于OO中的抽象类，通过fn与_fn实例化。
+//==================================================
+
+// 盒子模型
+.w(@w){width:@w;}
+.h(@h){height:@h;}
+.size(@w,@h){.w(@w);.h(@h);}
+.square(@size){.size(@size,@size);}
+
+.pt(@pt){padding-top:@pt}
+.pl(@pl){padding-left:@pl}
+.pr(@pr){padding-right:@pr}
+.pb(@pb){padding-bottom:@pb}
+.p(@padding){padding:@padding;}
+
+.mt(@pt){margin-top:@pt}
+.ml(@pl){margin-left:@pl}
+.mr(@pr){margin-right:@pr}
+.mb(@pb){margin-bottom:@pb}
+.m(@margin){margin:@margin;}
+
+.center(@w){.w(@w);.ml(auto);.mr(auto);}
+.middle(@mt:0){.abs;top:50%;.mt(@mt);}
+
+
+// 背景 与 颜色
+.c(@c){color:@c;}
+.bc(@c){background-color:@c;}
+.brp(@repeat){background-repeat:@repeat;}
+.bp(@x,@y){background-position:@x @y;}
+
+
+// background-image
+.bi(@url:"",@type:""){background-image:url(~"@{url}");}
+._biComm(@url:""){background-image:~"url(@{imgPathComm}@{url})";}
+._biRes(@url:""){background-image:~"url(@{imgPathRes}@{url})";}
+._bi(@url:""){background-image:~"url(@{imgPath}@{url})";}
+
+
+// background
+.bg(@url:"",@rp:no-repeat,@x:0,@y:0){background:transparent url(~"@{url}") @rp @x @y;}
+._bg(@url:"",@rp:no-repeat,@x:0,@y:0){background:transparent url(~"@{imgPath}@{url}") @rp @x @y;}
+._bgComm(@url:"",@rp:no-repeat,@x:0,@y:0){background:transparent url(~"@{imgPathComm}@{url}") @rp @x @y;}
+._bgRes(@url:"",@rp:no-repeat,@x:0,@y:0){background:transparent url(~"@{imgPathRes}@{url}") @rp @x @y;}
+
+
+// icon
+.setIcon(@url, @w, @h, @display:inline-block){
+    .bg(~"@{url}");.w(@w);.h(@h);.vm;display:@display;
+}
+._setIcon(@url, @w, @h, @display:inline-block){
+    ._bg(~"@{url}");.w(@w);.h(@h);.vm;display:@display;
+}
+._setIconComm(@url, @w, @h, @display:inline-block){
+    ._bgComm(~"@{url}");.w(@w);.h(@h);.vm;display:@display;
+}
+._setIconRes(@url, @w, @h, @display:inline-block){
+    ._bgRes(~"@{url}");.w(@w);.h(@h);.vm;display:@display;
+}
+.setIconSize(@w, @h, @display:inline-block){
+    .w(@w);.h(@h);.vm;display:@display;
+}
+
+
+// sprite
+.bgSprite(@url:"",@rp:no-repeat){.bg(~"@{url}?__sprite",@rp);}
+._bgSprite(@url:"",@rp:no-repeat){._bg(~"@{url}?__sprite",@rp);}
+._bgSpriteComm(@url:"",@rp:no-repeat){._bgComm(~"@{url}?__sprite",@rp);}
+._bgSpriteRes(@url:"",@rp:no-repeat){._bgRes(~"@{url}?__sprite",@rp);}
+
+.setIconSprite(@url, @w, @h, @display:inline-block){
+    .bg(~"@{url}?__sprite");.w(@w);.h(@h);.vm;display:@display;
+}
+._setIconSprite(@url, @w, @h, @display:inline-block){
+    ._bg(~"@{url}?__sprite");.w(@w);.h(@h);.vm;display:@display;
+}
+._setIconSpriteComm(@url, @w, @h, @display:inline-block){
+    ._bgComm(~"@{url}?__sprite");.w(@w);.h(@h);.vm;display:@display;
+}
+._setIconSpriteRes(@url, @w, @h, @display:inline-block){
+    ._bgRes(~"@{url}?__sprite");.w(@w);.h(@h);.vm;display:@display;
+}
+
+.bgSprite2(@url:"",@rp:no-repeat){.bg(~"@{url}?__sprite2",@rp);}
+._bgSprite2(@url:"",@rp:no-repeat){._bg(~"@{url}?__sprite2",@rp);}
+._bgSpriteComm2(@url:"",@rp:no-repeat){._bgComm(~"@{url}?__sprite2",@rp);}
+._bgSpriteRes(@url:"",@rp:no-repeat){._bgRes(~"@{url}?__sprite2",@rp);}
+
+.setIconSprite2(@url, @w, @h, @display:inline-block){
+    .bg(~"@{url}?__sprite2");.w(@w);.h(@h);.vm;display:@display;
+}
+._setIconSprite2(@url, @w, @h, @display:inline-block){
+    ._bg(~"@{url}?__sprite2");.w(@w);.h(@h);.vm;display:@display;
+}
+._setIconSpriteComm2(@url, @w, @h, @display:inline-block){
+    ._bgComm(~"@{url}?__sprite2");.w(@w);.h(@h);.vm;display:@display;
+}
+._setIconSpriteRes2(@url, @w, @h, @display:inline-block){
+    ._bgRes(~"@{url}?__sprite2");.w(@w);.h(@h);.vm;display:@display;
+}
+
+
+// 字体
+.f(@s:14px){font-size:@s;}
+.font(@font,@fontFamily:@globalFont){font:@font @fontFamily;}
+.lh(@lh:1.6){line-height:@lh;}
+.indent(@indent:2em){text-indent:@indent;}
+
+
+// CSS3: 文字阴影
+.ts(@x:0, @y:1px, @r:1px, @c:rgba(0,0,0,.5)){
+    text-shadow:@x @y @r @c;
+}
+
+// 文字
+.ellipsis(@w:auto){.w(@w);.oh;text-overflow:ellipsis;white-space:nowrap;word-wrap:normal;}
+.ellipsis(@type,@line){.oh;text-overflow:ellipsis;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:@line;}
+.text_hide(@h){.h(@h);.lh(999em);.oh;}
+.text_wrap(){word-wrap:break-word;word-break:break-all;}
+.pre_wrap(){word-wrap:normal;white-space:pre-wrap;}
+.hyphens(){word-wrap:break-word;-webkit-hyphens:auto;-ms-hyphens:auto;hyphens:auto;}
+
+
+
+// CSS3: 圆角
+.br(@s: 5px) {
+    border-radius:@s;
+    -moz-border-radius:@s;
+    -webkit-border-radius:@s;
+}
+.br(@tlRadius, @trRadius, @blRadius, @brRadius){
+    .br_tl(@tlRadius);
+    .br_tr(@trRadius);
+    .br_bl(@blRadius);
+    .br_br(@brRadius);        
+}
+
+.br_tl(@radius) {
+    border-top-left-radius: @radius;
+    -moz-border-radius-topleft: @radius;
+    -webkit-border-top-left-radius: @radius;
+}
+.br_tr(@radius) {
+    border-top-right-radius: @radius;
+    -moz-border-radius-topright: @radius;
+    -webkit-border-top-right-radius: @radius;
+}
+.br_br(@radius) {
+    border-bottom-right-radius: @radius;
+    -moz-border-radius-bottomright: @radius;
+    -webkit-border-bottom-right-radius: @radius;
+}
+.br_bl(@radius) {
+    border-bottom-left-radius: @radius;
+    -moz-border-radius-bottomleft: @radius;
+    -webkit-border-bottom-left-radius: @radius;
+}
+
+.br_t(@radius) {
+    .br_tl(@radius);
+    .br_tr(@radius);
+}
+.br_r(@radius) {
+    .br_tr(@radius);
+    .br_br(@radius);
+}
+.br_b(@radius) {
+    .br_bl(@radius);
+    .br_br(@radius);
+}
+.br_l(@radius) {
+    .br_tl(@radius);
+    .br_bl(@radius);
+}
+
+
+// CSS3: 阴影
+.bs(@arguments){
+    box-shadow:@arguments;
+    -moz-box-shadow:@arguments;
+    -webkit-box-shadow:@arguments;
+}
+.bs(@arguments1, @arguments2){
+    box-shadow:@arguments1,@arguments2;
+    -moz-box-shadow:@arguments1,@arguments2;
+    -webkit-box-shadow:@arguments1,@arguments2;
+}
+
+
+// CSS3: 渐变
+
+//.lg(@startColor, @endColor, @start:0, @stop:100%) when (hue(@startColor) = hue(@endColor)) and (saturation(@startColor) = saturation(@endColor)) and (lightness(@startColor) = lightness(@endColor)){
+//    .bc(@startColor);
+//}
+//.lg(@startColor, @endColor, @start:0, @stop:100%) when not(hue(@startColor) = hue(@endColor)),not(saturation(@startColor) = saturation(@endColor)),not(lightness(@startColor) = lightness(@endColor)) and (isnumber(@start)){//判断第3个参数是否为数字
+.lg(@startColor, @endColor, @start:0, @stop:100%) when (isnumber(@start)){//判断第3个参数是否为数字
+    background-color:mix(@startColor, @endColor, 40%);
+    background-image:-moz-linear-gradient(top, @startColor @start, @endColor @stop);
+    background-image:-webkit-gradient(linear, 0 @start, 0 @stop, from(@startColor), to(@endColor));
+    background-image:-webkit-linear-gradient(top, @startColor @start, @endColor @stop);
+    background-image:-o-linear-gradient(top, @startColor @start, @endColor @stop);
+    background-image:linear-gradient(to bottom, @startColor @start, @endColor @stop);
+}
+.lg(@bgColor, @startColor, @endColor, @start:0, @stop:100%) when (iscolor(@endColor)){//判断第3个参数是否为颜色
+    background-color:@bgColor;
+    background-image:-moz-linear-gradient(top, @startColor @start, @endColor @stop);
+    background-image:-webkit-gradient(linear, 0 @start, 0 @stop, from(@startColor), to(@endColor));
+    background-image:-webkit-linear-gradient(top, @startColor @start, @endColor @stop);
+    background-image:-o-linear-gradient(top, @startColor @start, @endColor @stop);
+    background-image:linear-gradient(to bottom, @startColor @start, @endColor @stop);
+}
+.lg_3(@startColor, @midColor, @endColor, @start:0, @mid: 60%, @stop:100%) when (isnumber(@mid)){
+    background-color:mix(@startColor, @endColor, 40%);
+    background-image:-moz-linear-gradient(top, @startColor @start, @midColor @mid, @endColor @stop);
+    background-image:-webkit-gradient(linear, 0 @start, 0 @stop, from(@startColor), color-stop(@mid, @midColor), to(@endColor));
+    background-image:-webkit-linear-gradient(top, @startColor @start, @midColor @mid, @endColor @stop);
+    background-image:-o-linear-gradient(top, @startColor @start, @midColor @mid, @endColor @stop);
+    background-image:linear-gradient(to bottom, @startColor @start, @midColor @mid, @endColor @stop);
+}
+.lg_3(@bgColor, @startColor, @midColor, @endColor, @start:0, @mid: 60%, @stop:100%) when (iscolor(@endColor)){
+    background-color:@bgColor;
+    background-image:-moz-linear-gradient(top, @startColor @start, @midColor @mid, @endColor @stop);
+    background-image:-webkit-gradient(linear, 0 @start, 0 @stop, from(@startColor), color-stop(@mid, @midColor), to(@endColor));
+    background-image:-webkit-linear-gradient(top, @startColor @start, @midColor @mid, @endColor @stop);
+    background-image:-o-linear-gradient(top, @startColor @start, @midColor @mid, @endColor @stop);
+    background-image:linear-gradient(to bottom, @startColor @start, @midColor @mid, @endColor @stop);
+}
+
+
+// placeholder, need to be used on input element
+.placeholder(@color) {
+    &::-webkit-input-placeholder {
+        color: @color;
+    }
+    &:-moz-placeholder {
+        color: @color;
+    }
+    &::-moz-placeholder {
+        color: @color;
+    }
+    &:-ms-input-placeholder {
+        color: @color;
+    }
+}
+
+// opacity
+.op(@opacity:1){
+    filter: ~"alpha(opacity = " @opacity*100 ~")";
+    -moz-opacity:@opacity;
+    -khtml-opacity: @opacity;
+    opacity: @opacity;
+}
+.bop(white,@o:1){
+    @oie:argb(rgba(255,255,255,@o));
+    background:rgba(255,255,255,@o)!important;
+    filter: ~"progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='@{oie}',endcolorstr = '@{oie}')";
+}
+.bop(black,@o:1){
+    @oie:argb(rgba(0,0,0,@o));
+    background:rgba(0,0,0,@o)!important;
+    filter: ~"progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='@{oie}',endcolorstr = '@{oie}')";
+}
+.bop(@rgba){
+    @argb:argb(@rgba);
+    background:@rgba!important;
+    filter: ~"progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='@{argb}',endcolorstr = '@{argb}')";
+}
+
+// library
+.dn(){display:none;}.di(){display:inline;}.dib(){display:inline-block;}.b_dib(){display:inline-block;*display:inline;*zoom:1;}.db(){display:block;}.cell(){display:table-cell;}.bn(){background:none;}
+.vh(){visibility:hidden;}.vv(){visibility:visible;}
+.static(){position:static;}.rel(){position:relative;}.abs(){position:absolute;}.fixed(){position:fixed;}
+.ov(){overflow:visible;}.oh(){overflow:hidden;}.z(){*zoom:1;}
+.l(){float:left;}.r(){float:right;}.fn(){float:none;}.cl(){clear:both;}
+
+
+.tc(){text-align:center;}.tr(){text-align:right;}.tl(){text-align:left;}
+.vt(){vertical-align:top;}.vm(){vertical-align:middle;}.vm_mac(){vertical-align:-webkit-baseline-middle;}.vb(){vertical-align:bottom;}
+.f0(){font-size:0;}
+.fa(){font-family:Arial;}.fs(){font-family:SimSun;}.fyh(){font-family:"Microsoft YaHei";}
+.n(){font-weight:400;font-style:normal;}.b(){font-weight:700;}.thin(){font-weight:400;}.i(){font-style:italic;}
+.tdn(){text-decoration:none;}
+.del(){text-decoration:line-through;}
+.poi(){cursor:pointer;}
+.cdf(){cursor:default;}
+.group(){
+    .z;
+    &:after{content:"\200B";.db;.h(0);.cl;}
+}
+.flex(){
+    // display:table-cell;.fn;width:2000px; *display:inline-block; *width:auto;
+
+    display:table-cell;.vt;.fn;width:auto;*display:block;*zoom:1;
+    &:after{content:" . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ";visibility:hidden; clear:both;height:0 !important;display:block;line-height:0;}
+
+}
+.flex_simple(){.fn;.w(auto);.oh;.z;*overflow:visible;}
+.tj(){
+    text-align:justify;
+    text-justify:distribute-all-lines;/*ie6-9*/
+    //text-align-last:justify;/* ie9*/
+    //-moz-text-align-last:justify;/*ff*/
+    //-webkit-text-align-last:justify;/*chrome 20+*/
+
+    .f(0);
+    &:after{.dib;.w(100%);.h(0);.f(0);.m(0);.p(0);.oh;content:".";}
+    .tj_item{.f(@globalFontSize);.tl;text-justify:auto;}
+}
+.tj_simple(){
+    text-align:justify;
+    text-justify:distribute-all-lines;/*ie6-9*/
+    .f(0);
+    .tj_item{.f(@globalFontSize);.tl;text-justify:auto;}
+    .last_child{.w(100%);.h(0);.f(0);.m(0);.p(0);.oh;}
+}
+
+
+// arrow
+.arrow(@borderWidth, @borderColor){
+    .setArrowWidth(@borderWidth);
+    .setArrowColor(@borderColor);
+}
+.setArrowColor(@borderColor){
+    &.arrow_t{border-bottom-color:@borderColor;}
+    &.arrow_r{border-left-color:@borderColor;}
+    &.arrow_b{border-top-color:@borderColor;}
+    &.arrow_l{border-right-color:@borderColor;}        
+}
+.setArrowWidth(@borderWidth){border-width:@borderWidth;}
+
+.setArrow(@direction, @borderWidth, @borderColor) when (@direction = top){
+    .dib;.square(0);border-width:@borderWidth;border-style:dashed;border-color:transparent;
+    
+    .arrow_t(@borderColor);
+}
+.setArrow(@direction, @borderWidth, @borderColor) when (@direction = right){
+    .dib;.square(0);border-width:@borderWidth;border-style:dashed;border-color:transparent;
+    .arrow_r(@borderColor);
+}
+.setArrow(@direction, @borderWidth, @borderColor) when (@direction = bottom){
+    .dib;.square(0);border-width:@borderWidth;border-style:dashed;border-color:transparent;
+    .arrow_b(@borderColor);
+}
+.setArrow(@direction, @borderWidth, @borderColor) when (@direction = left){
+    .dib;.square(0);border-width:@borderWidth;border-style:dashed;border-color:transparent;
+    .arrow_l(@borderColor);
+}
+.arrow_t(@c){
+    border-top-width:0;
+    border-bottom-color:@c;
+    border-bottom-style:solid;
+}
+.arrow_r(@c){
+    border-right-width:0;
+    border-left-color:@c;
+    border-left-style:solid;
+}
+.arrow_b(@c){
+    border-bottom-width:0;
+    border-top-color:@c;
+    border-top-style:solid;
+}
+.arrow_l(@c){
+    border-left-width:0;
+    border-right-color:@c;
+    border-right-style:solid;
+}
+
+// wap Arrow
+.setArrowWidth_Wap(@borderWidth){border-width:@borderWidth @borderWidth 0 0;}
+.setArrowSize_Wap(@arrowsize){.h(@arrowsize);.w(@arrowsize)}
+.setArrow_Wap(@direction, @arrowsize, @borderColor,@borderWidth) when (@direction = top){
+    .dib();.transform(rotate(-45deg));
+    .setArrowSize_Wap(@arrowsize);
+    .setArrowWidth_Wap(@borderWidth);
+    border-color:@borderColor;
+    border-style:solid;
+}
+.setArrow_Wap(@direction, @arrowsize, @borderColor,@borderWidth) when (@direction = right){
+    .dib();.rotate(45deg);
+    .setArrowSize_Wap(@arrowsize);
+    .setArrowWidth_Wap(@borderWidth); 
+    border-color:@borderColor;
+    border-style:solid;
+
+    .rel;top:-2px;
+}
+.setArrow_Wap(@direction, @arrowsize, @borderColor,@borderWidth) when (@direction = down){
+    .dib();.rotate(135deg);
+    .setArrowSize_Wap(@arrowsize);
+    .setArrowWidth_Wap(@borderWidth); 
+    border-color:@borderColor;
+    border-style:solid;
+
+    .rel;top:-3px;
+}
+.setArrow_Wap(@direction, @arrowsize, @borderColor,@borderWidth) when (@direction = left){
+    .dib();.rotate(-135deg);
+    .setArrowSize_Wap(@arrowsize);
+    .setArrowWidth_Wap(@borderWidth); 
+    border-color:@borderColor;
+    border-style:solid;
+
+    .rel;top:-2px;
+}
+
+
+.setList(@pl:0,@x:0,@y:50%){
+    .pl(@pl);._bgComm("icon/common/icon_point.png",no-repeat,@x,@y);
+}
+.setDot(@c:#AAAAAA,@size:8px){
+    .dib;.vm;.n;.c(@c);.f(@size);
+}
+.setLogo(@w,@h,@url:"bg/bg_logo.png",@f:24px){
+    .b_dib;.f(@f);
+    a{
+        .db;.w(@w);.h(@h);.oh;.tdn;
+        &:before{
+            .dib;content:url(~"@{imgPath}@{url}");
+        }
+        *background:transparent url(~"@{imgPath}@{url}") 0 0 no-repeat;
+        *line-height:3 * @logoHeight;
+    }
+}
+//设置1px线
+.setLine(@c:#CECECE, @dir:H) when (@dir = H) {content:" ";.abs;left:0;top:0;.w(100%);.h(1px);border-top: 1px solid @c;.transform_origin(0,0);.transform(scaleY(0.5));}
+.setLine(@c:#CECECE, @dir:H) when (@dir = V) {content:" ";.abs;left:0;top:0;.w(1px);.h(100%);border-left: 1px solid @c;.transform_origin(0,0);.transform(scaleX(0.5));}
+
+.setTopLine(@c: #C7C7C7){content: " "; .abs; left: 0; top: 0; .w(100%); .h(1px); border-top: 1px solid @c; .transform_origin(0, 0); .transform(scaleY(0.5));}
+.setBottomLine(@c: #C7C7C7){content: " "; .abs; left: 0; bottom: 0; .w(100%); .h(1px); border-bottom: 1px solid @c; .transform_origin(0, 100%); .transform(scaleY(0.5));}
+.setLeftLine(@c: #C7C7C7){content: " "; .abs; left: 0; top: 0; .w(1px); .h(100%); border-left: 1px solid @c; .transform_origin(0, 0); .transform(scaleX(0.5));}
+.setRightLine(@c: #C7C7C7){content: " "; .abs; right: 0; top: 0; .w(1px); .h(100%); border-right: 1px solid @c; .transform_origin(100%, 0); .transform(scaleX(0.5));}
+
+.setTapColor(@c:rgba(0,0,0,0)){-webkit-tap-highlight-color:@c;}
+
+
+.setVm(){
+    .vm_item{.cell;.vm;.text_wrap;}
+    .vm_item_default{white-space:nowrap;}
+    .vm_item_primary{.w(2000px);}
+}
+
+
+// button
+.btn_h(@h){.h(@h - 2px);.lh(@h - 2px);*line-height:@h - 4px;}
+.btn_h(@h,@type){.h(@h);.lh(@h - 4px);}
+.setBtn(@skin,@w,@h,@p) when (@skin = default){
+    .setBtnDefault;
+    .btn_h(@h);.w(@w);.pl(@p);.pr(@p);
+}
+.setBtn(@skin,@w,@h,@p) when (@skin = primary){
+    .setBtnPrimary;
+    .btn_h(@h);.w(@w);.pl(@p);.pr(@p);
+}
+.setBtn(@skin,@w,@h,@p) when (@skin = disabled){
+    .setBtnDisabled;
+    .btn_h(@h);.w(@w);.pl(@p);.pr(@p);
+}
+
+// @type参数是为了区别input类型的button
+// 加上@type是为了使得出现button.btn的时候能够文字垂直居中对齐
+// 由于button.btn这种方式在ie7下会有聚焦黑边框，目前bizweb已改用.btn>button的方式，所以@type这中方法在此已不再使用
+// 为了兼容其它不用考虑button.btn这种方式在ie7出现聚焦黑边框的情况而不需使用.btn>button的方式，@type方法仍需保留
+.setBtn(@skin,@w,@h,@p,@type) when (@skin = default){
+    .setBtnDefault;
+    .btn_h(@h,@type);.w(@w);.pl(@p);.pr(@p);
+}
+.setBtn(@skin,@w,@h,@p,@type) when (@skin = primary){
+    .setBtnPrimary;
+    .btn_h(@h,@type);.w(@w);.pl(@p);.pr(@p);
+}
+.setBtn(@skin,@w,@h,@p,@type) when (@skin = disabled){
+    .setBtnDisabled;
+    .btn_h(@h,@type);.w(@w);.pl(@p);.pr(@p);
+}
+
+// CSS3
+// Edit by Bear 2014-03-13
+// background
+.background_size(@w:auto, @h:auto){
+  -webkit-background-size: @w @h;
+  background-size: @w @h;
+}
+.setBgSizeType(@type:cover){
+  -webkit-background-size:@type;
+  background-size:@type;
+}
+
+// filter
+.filter(@args){
+  -webkit-filter: @args;
+  -ms-filter: @args;
+  filter: @args;
+}
+.filterBlur(@val) {
+  .filter(blur(@val));
+}
+
+// columns
+.col_gap(@gap){
+  -moz-column-gap:@gap;
+  -webkit-column-gap:@gap;
+  column-gap:@gap;
+}
+.col_width(@w){
+  -moz-column-width:@w;
+  -webkit-column-width:@w;
+  column-width:@w;
+}
+.col_count(@n){
+  -moz-column-count:@n;
+  -webkit-column-count:@n;
+  column-count:@n;
+
+}
+.cols(@args){
+  -moz-columns:@args;
+  -webkit-columns:@args;
+  columns:@args;
+}
+
+// box_sizing
+.box_sizing(@type:border-box){
+  box-sizing:@type;
+  -moz-box-sizing:@type;
+  -webkit-box-sizing:@type;
+}
+
+// box flex
+.display_box(){
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.box_flex(@v){
+  .w(100%);
+  -webkit-box-flex: @v;
+  -webkit-flex: @v;
+  -moz-box-flex: @v;
+  -ms-flex: @v;
+  box-flex: @v;
+  flex: @v;
+}
+
+// FX
+.transition(@args){
+  -webkit-transition: @args;
+  transition: @args;
+}
+.transform(@args){
+  -webkit-transform: @args;
+  transform: @args;
+}
+.transform_origin(@x: 50%, @y: 50%){
+  -webkit-transform-origin: @x @y;
+  transform-origin: @x @y;
+}
+// 旋转
+.rotate(@v){.transform(rotate(@v));}
+.mxRotate(@v) when(@v = 45){
+    transform:matrix(0.71,0.71,-0.71,0.71,0,0);
+    -ms-transform:matrix(0.71,0.71,-0.71,0.71,0,0);
+    -webkit-transform:matrix(0.71,0.71,-0.71,0.71,0,0);
+}
+.mxRotate(@v) when(@v = 90){
+    transform:matrix(0.00,1.00,-1.00,0.00,0,0);
+    -ms-transform:matrix(0.00,1.00,-1.00,0.00,0,0);
+    -webkit-transform:matrix(0.00,1.00,-1.00,0.00,0,0);
+}
+.mxRotate(@v) when(@v = 135){
+    transform:matrix(-0.71,0.71,-0.71,-0.71,0,0);
+    -ms-transform:matrix(-0.71,0.71,-0.71,-0.71,0,0);
+    -webkit-transform:matrix(-0.71,0.71,-0.71,-0.71,0,0);
+}
+.mxRotate(@v) when(@v = 180){
+    transform:matrix(-1.00,0.00,-0.00,-1.00,0,0);
+    -ms-transform:matrix(-1.00,0.00,-0.00,-1.00,0,0);
+    -webkit-transform:matrix(-1.00,0.00,-0.00,-1.00,0,0);
+}
+.mxRotate(@v) when(@v = 225){
+    transform:matrix(-0.71,-0.71,0.71,-0.71,0,0);
+    -ms-transform:matrix(-0.71,-0.71,0.71,-0.71,0,0);
+    -webkit-transform:matrix(-0.71,-0.71,0.71,-0.71,0,0);
+}
+.mxRotate(@v) when(@v = 270){
+    transform:matrix(-0.00,-1.00,1.00,-0.00,0,0);
+    -ms-transform:matrix(-0.00,-1.00,1.00,-0.00,0,0);
+    -webkit-transform:matrix(-0.00,-1.00,1.00,-0.00,0,0);
+}
+.mxRotate(@v) when(@v = 315){
+    transform:matrix(0.71,-0.71,0.71,0.71,0,0);
+    -ms-transform:matrix(0.71,-0.71,0.71,0.71,0,0);
+    -webkit-transform:matrix(0.71,-0.71,0.71,0.71,0,0);
+}
+// 平移
+.translate(@x: 0, @y: 0){.transform(translate(@x, @y));}
+// 倾斜
+.skew(@v){.transform(skew(@v));}
+// 尺寸
+.scale(@v){.transform(scale(@v));}
+// 翻转
+.flipx(){.transform(scaleX(-1));filter:FlipH;}
+.flipy(){.transform(scaleY(-1));filter:FlipV;}
+
+.animation(@v){//animation: name duration timing-function delay iteration-count direction;
+  -webkit-animation: @v;
+  animation: @v;
+}
+
+.backface_hidden(){
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+//user action
+.no_select(){
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}

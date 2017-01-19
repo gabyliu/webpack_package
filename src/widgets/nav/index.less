@@ -1,0 +1,91 @@
+@import "../../base/style/fn";
+
+/*
+nav
+左侧
+*/
+.nav{
+	position: static;
+	top: 0;
+	left: 0;
+	.w(200px);
+	border-right: 1px solid @defaultLineColor;
+	
+}
+.nav_ele{
+	.h(38px);
+	.lh(38px);
+	border-bottom: 1px solid @defaultLineColor;
+	a{
+		.db;
+		.lh(inherit);
+		.c(@globalColor);
+		.pl(30px);
+		text-decoration: none;
+	}
+	&.nav_title{
+		.nav_link{
+			.pl(15px);
+		}
+	}
+	&.selected{
+		.bc(@selectedColor);
+		a{
+			.c(@bgColor);
+		}
+	}
+	&.disabled{
+		a{
+			.c(@defaultLineColor);
+		}
+	}
+}
+
+
+/*page_nav_list*/
+.page_nav_list{
+	border-bottom: 1px solid @defaultLineColor;
+	.page_nav_ele{
+		.l;
+		
+		.page_nav_link{
+			.db;
+			.p(0 10px);
+			.h(38px);
+			.lh(38px);
+		}
+		&.selected{
+			border-bottom: 2px solid @selectedColor;
+		}
+	}
+}
+.inner_top_opr{
+	.mb(10px);
+}
+//顶部 nav
+.head{
+    height: 60px;
+    line-height: 60px;
+    background-color: #3f4348;
+    color: #999999;
+    text-align: center;
+    .inner{
+    	.p(0 20px);
+    	.tl;
+    	.f(20px);
+    	
+    }
+    a{
+    	.c(#fff);
+    }
+}
+
+.head .logo_ic {
+    position: relative;
+    top: -2px;
+    display: inline-block;
+    width: 60px;
+    height: 100%;
+    background: url(../../base/images/ic/ic_logo_white.png) no-repeat center;
+    vertical-align: top;
+    }

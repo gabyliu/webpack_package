@@ -1,0 +1,101 @@
+@import "../../base/style/fn";
+
+body{
+    font-size: 13px;
+    font-family: "Helvetica Neue", "Hiragino Sans GB", "Microsoft YaHei", "\9ED1\4F53", Arial, sans-serif;
+    line-height: 1.5em;
+}
+.container{
+    padding: 50px 200px;
+}
+/*popover*/
+.popover_area {
+    width: 107px;
+    margin-top: 10px;
+    position: relative;
+}
+.popover_area .popover_content.right {
+    right: 0;
+}
+.popover_area .popover_content {
+    position: absolute;
+    border: 1px solid #e5e5e5;
+    padding: 10px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    z-index: 10;
+    width: 240px;
+    text-align: center;
+    background-color: #ffffff;
+}
+.popover_area .popover_arrow {
+    position: absolute;
+    top: -12px;
+}
+.popover_area .popover_content.right .popover_arrow {
+    right: 20px;
+}
+.popover_area .popover_content.center .popover_arrow {
+    
+    left: 50%;
+    margin-left: -6px;
+}
+.popover_area .popover_content.left .popover_arrow {
+    left: 20px;
+}
+.popover_area .popover_arrow:before {
+    position: absolute;
+    content: ' ';
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 6px;
+    border-color: transparent transparent #e5e5e5;
+}
+.popover_area .popover_arrow:after {
+    position: absolute;
+    top: 1px;
+    content: ' ';
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 6px;
+    border-color: transparent transparent #fff;
+}
+.popover_area .popover_content_opr_area {
+    margin-top: 10px;
+}
+.popover_area .popover_content_opr_area .btn {
+    margin: 0 5px;
+}
+.btn {
+    min-width: 60px;
+    display: inline-block;
+    padding: 0 22px;
+    height: 30px;
+    line-height: 30px;
+    overflow: visible;
+    vertical-align: middle;
+    text-align: center;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    text-decoration: none;
+    font-size: 13px;
+    border-width: 1px;
+    border-style: solid;
+    cursor: pointer;
+}
+.btn_default {
+    background-color: #ffffff;
+    color: #333333;
+    border-color: #dadbe0;
+}
+.btn_primary {
+    background-color: #46d321;
+    color: #ffffff;
+    border-color: #46D321;
+}

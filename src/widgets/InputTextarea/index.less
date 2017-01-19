@@ -1,0 +1,131 @@
+@import "../../base/style/fn";
+
+body{
+    font-size: 13px;
+    font-family: "Helvetica Neue", "Hiragino Sans GB", "Microsoft YaHei", "\9ED1\4F53", Arial, sans-serif;
+    line-height: 1.5em;
+}
+/*input*/
+.frm_input_group.with_hint{
+    position: relative;
+}
+
+.frm_input_box {
+    display: inline-block;
+    position: relative;
+    height: 35px;
+    line-height: 35px;
+    vertical-align: middle;
+    width: 295px;
+    font-size: 14px;
+    padding: 0 10px;
+    border: 1px solid #e5e5e5;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    background-color: #ffffff;
+}
+.frm_input {
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+    height: 22px;
+    margin: 4px 0;
+}
+.frm_input_group{
+    .mb(20px);
+    .frm_label{
+        .dib;
+        .w(5em);
+        .mr(1em);
+        .vm;
+    }
+
+    .frm_tips{
+
+        .ml(6em);
+        &.fail{
+            .c(@errorColor);
+        }
+    }
+    &.fail{
+        .c(@errorColor);
+    }
+}
+.frm_input_group .frm_input{
+    width: 100%;
+}
+.frm_input_group.with_hint .frm_input {
+    width: 85%;
+}
+.frm_input_box .frm_hint {
+    position: absolute;
+    color: #e5e5e5;
+    top: 0;
+    right: 10px;
+}
+.frm_hint i {
+    font-style: normal;
+}
+.frm_input_box .frm_hint b {
+    font-weight: normal;
+}
+
+/*textareat*/
+.frm_textarea_box {
+    position: relative;
+    display: inline-block;
+    width: 304px;
+    padding: 5px 0 5px 10px;
+    font-size: 14px;
+    border: 1px solid #e7e7eb;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    background-color: #ffffff;
+    
+}
+.frm_textarea_group{
+    .mb(20px);
+    .frm_label{
+        .dib;
+        .w(5em);
+        
+        .mr(1em);
+        .vt;
+    }
+    .frm_textarea_box{
+        .dib;
+    }
+}
+.frm_textarea_group .frm_textarea {
+    width: 100%;
+    height: 100px;
+    padding: 0;
+    border: none;
+    resize: none;
+    outline: 0;
+}
+.frm_textarea_box .frm_hint{
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+    color: #e5e5e5;
+}
+.frm_textarea_box .frm_hint b{
+    font-weight: normal;
+}
+.frm_textarea_group{
+    &.fail{
+        .c(@errorColor);
+    }
+    .frm_tips{
+        .ml(6em);
+    }
+}
