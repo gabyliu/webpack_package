@@ -36,12 +36,9 @@
 **2.** widgetsList页面是项目所有组件预览的页面
 
 ##使用到的插件
-**1.** 初始化开发目录，plugin-package-init
+**1.** 初始化开发目录，[plugin-package-init][4]
 
-[plugin-package-init][4]
-
-**2.** 组件加载，widgets-loader
-[widgets-loader][5]
+**2.** 组件加载，[widgets-loader][5]
 
 
   [1]: http://mmbiz.qpic.cn/mmemoticon/ajNVdqHZLLCF5N2esKGDeBR8upYQ7NtE2ialY6S2FN4GeumTU48as9TK6YbicG2iczsqZFQxK9Xibno/0
