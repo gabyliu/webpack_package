@@ -3,85 +3,49 @@
 ##安装步骤
 ```npm install webpack_package```
 
-```cd webpack_package```
-
 ```npm install```
 
-dist/pages/widgetsList/index.html是项目的所有组件列表
+##快速开始
+**1.** 开发中构建
 
-![此处输入图片的描述][1]
+```$npm run w```
 
+**2.** 初始化开发目录
 
-对它们进行操作，会在页面中显示返回数据
+```$npm run init```
+
+![回答下面问题][1]
+
+**3.** 引入组件
+
+```PACKAGE * as 你的组件名 from 你的组件名```
+
+比如，这里要引入widgets中的checkBox组件
 
 ![此处输入图片的描述][2]
 
-![此处输入图片的描述][3]
+**4.** 上线前打包
+
+```$npm run p```
+
+##注意点
+**1.** 目录形式
+
+![目录形式][3]
+
+**2.** widgetsList页面是项目所有组件预览的页面
+
+##使用到的插件
+**1.** 初始化开发目录，plugin-package-init
+
+[plugin-package-init][4]
+
+**2.** 组件加载，widgets-loader
+[widgets-loader][5]
 
 
-##怎么用
-- 目录形式
-
-![此处输入图片的描述][4]
-
-页面对于项目之于组件对于页面。
-
-对于项目，它是由各个页面组成。由pages里的文件夹组成，每个文件夹就是这个页面的所有资源。
-
-对于页面，它是由组件组成。由widgets里的所有文件夹组成，每个文件夹就是这个组件的所有资源。
-
-![此处输入图片的描述][5]
-
-pages和widgets里的文件夹都是由js、ejs、less组成这个文件的所有资源，其中js是必须的。
-
-![此处输入图片的描述][6]
-
-
-- 前端组件的引用
-
-```PACKAGE * as 组件名 from 'widgets文件夹中你要引用的组件文件夹名'```
-
-组件引用和es6的模块引用import语法一致。不同点在将“import”改为“PACKAGE”，以及不需要写组件的详细路径，只需要写widgets目录下要引用的文件夹名即可。用的是[widgets-loader][7]这个插件。
-
-例如：pages/widgetsList/index.js要引用checkBox组件
-
-![此处输入图片的描述][8]
-
-
-- 初始化开发文件夹
-
-```npm run init```
-
-用的是[plugin-package-init][9]这个插件
-
-大概的使用是这样：
-
-回答下面问题
-
-![此处输入图片的描述][10]
-
-生成对应开发文件夹
-
-![此处输入图片的描述][11]
-
-
-- 监听页面更新
-
-```npm run w```
-
-- 上线前压缩混淆打包
-
-```npm run p```
-
-
-  [1]: http://mmbiz.qpic.cn/mmemoticon/PiajxSqBRaELW5PcMUonINIuibjbOA6GTzsvicFCkm3hFCrQNJGn3BLQdojuXmLb1cqHCWXib0kLyzk/0
-  [2]: http://mmbiz.qpic.cn/mmemoticon/duc2TvpEgSTzdp7MY9Cf03UJrv08pWQEB0koVibKFayTeeWCpzaNPTp1DupanibfJV/0
-  [3]: http://mmbiz.qpic.cn/mmemoticon/duc2TvpEgSSuJ42VMy5ia7v2yCESzcFdDErrZfXLWzBR9Yt8DicYZkIiaA4vMgMpZvRIlEpbfxwLtQ/0
-  [4]: http://mmbiz.qpic.cn/mmemoticon/dx4Y70y9XcuicmyVD6blInxRuct7D2K8gGbbJ7tLa5hRS8L07niaV0L6RMjthbqLKE/0
-  [5]: http://mmbiz.qpic.cn/mmemoticon/PiajxSqBRaELiaDJicUzQeygtrFkmXRfu9OpzRB1wdhcp96ibXoZ6QMSDmk82DQHpbUG/0
-  [6]: http://mmbiz.qpic.cn/mmemoticon/dx4Y70y9XcuDHh8CZHXrgFCiacMibDXmJSmzib9LmsE5iaqlib5jkfEFkicqBO7rsbdBlF/0
-  [7]: https://www.npmjs.com/package/widgets-loader
-  [8]: http://mmbiz.qpic.cn/mmemoticon/Q3auHgzwzM6FlTK5C4kT0wNxMicekluWicxd5Vq83A7jRic1SV4oSqibJmDoGHdXwLJ9YdFsGdwSicd8/0
-  [9]: https://www.npmjs.com/package/plugin-package-init
-  [10]: http://mmbiz.qpic.cn/mmemoticon/ajNVdqHZLLCF5N2esKGDeBR8upYQ7NtE2ialY6S2FN4GeumTU48as9TK6YbicG2iczsqZFQxK9Xibno/0
-  [11]: http://mmbiz.qpic.cn/mmemoticon/Q3auHgzwzM5ib8KIjTiaRAy0XHBk6B7KV9IibwQLFQ39P0G8ltLsTZ49vu3KesamzKnC6uOy3Pqn8M5BaYq3r1KNA/0
+  [1]: http://mmbiz.qpic.cn/mmemoticon/ajNVdqHZLLCF5N2esKGDeBR8upYQ7NtE2ialY6S2FN4GeumTU48as9TK6YbicG2iczsqZFQxK9Xibno/0
+  [2]: http://mmbiz.qpic.cn/mmemoticon/Q3auHgzwzM6FlTK5C4kT0wNxMicekluWicxd5Vq83A7jRic1SV4oSqibJmDoGHdXwLJ9YdFsGdwSicd8/0
+  [3]: http://mmbiz.qpic.cn/mmemoticon/duc2TvpEgSRzpYhmEs7XvS9PC54zqf4smtiaGZA13AkMGVQstyxWKPicalAhR9DIRoghb6eg9Z81A0Xoqb1zDeTg/0
+  [4]: https://www.npmjs.com/package/plugin-package-init
+  [5]: https://www.npmjs.com/package/widgets-loader
